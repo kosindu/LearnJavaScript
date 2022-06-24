@@ -78,7 +78,34 @@ console.log('Hello World!');
 */
 
 /*
+! Operator precedence
+* Use the following link to get an idea about in which order the JavaScript executes the operators
+?  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+*/
 
+/*
+! Template literals
+* You can use template literals to output a value in more easy way
+* Also you can type multiline without typing "\n". You just need to hit Enter to go to a new line 
 
+TODO: Copy below code and try it yourself with your details 😀
+const age = 25;
+const firstName = "Kosindu";
+const lastName = "Kasthuri";
+console.log(`Hi, I'm ${firstName} ${lastName}.
+And I'm ${age} years old`);
+*/
 
+/*
+! Type conversion and Coercion
+! Type conversion
+* You can use Number() and String() methods to convert the type of a value
+* Try to use Number() method for a string and see the result. It will say "NaN". That means "Not a Number".
+
+! Type Coercion
+* This means that when we mix strings with numbers with (+ - * /) operators, that numbers will be converted to strings in only with + operator. Otherwise (- * /) with these operators, the strings are converted to numbers
+? console.log('I am ' + 25 + ' years old); // answer "I am 25 years old" (as a string)
+? console.log('35' - 25 - '5'); // answer 5 (as a number) |
+? console.log('25' / 5); // answer 5 (as a number)        | If we use words with these three operators it will output NaN
+? console.log('2' * 5); // answer 10 (as a number)        |
 */
