@@ -366,7 +366,7 @@ printForecast([12, 5, -5, 0, 4]);
 ? const arr = [2, 3, 4];
 ? const [p, , q] = arr;     p=2, q=4
 
-* We can easily switch the variables
+* We can easily mutate the variables
 ? const arr = [2, 3, 4];
 ? let [p, , q] = arr;
 ? [p, q] = [q, p];          p=4, q=2
@@ -378,3 +378,161 @@ printForecast([12, 5, -5, 0, 4]);
 * We can use default values when destructuring
 ? const [p=1, q=1, r=1] = [8, 9];   p=8, q=9, r=1
 */
+
+/*
+! Destructuring Objects
+? const man = {
+?		firstName: 'Kosindu',
+?		age: 29,
+?		country: 'Sri Lanka'
+? }
+* We need to write exact property name when object destructuring
+? const {firstName, country, age} = man;  firstName=Kosindu, country=Sri Lanka, age=29
+
+* We can change the variable names as follows
+? const {firstName: name, country: location, age: howOld} = man;   name=Kosindu, location=Sri Lanka, howOld=29
+
+* We can use default values when destructuring
+? const {firstName: name = 'unknown', country = 'Sri Lanka', age} = man;
+
+* Mutating Variables
+? let a = 111;
+? let b = 999;
+? const obj = {a:23, b:7, c:14};
+? ({a, b} = obj);   a=23, b=7
+
+* Also we can do Nested Destructuring here as well
+? const man = {
+? 	name: {
+?			firstName: 'Kosindu',
+?			lastName: 'Kasthuri'
+? 	}
+? }
+? const {name: {firstName, lastName}} = man;   firstName=Kosindu, lastName=Kasthuri
+*/
+
+/*
+! Spread Operator
+* We use spread operator to create new arrays or to pass multiple values into a function
+* We can use spread operator to individually separate all elements of an array
+? const arr = [1, 2, 3, 4];
+? const newArr = [5, ...arr, 6, 7, 8];   new Arr = [5, 1, 2, 3, 4, 6, 7, 8]
+
+* Spread operator takes all the elements fromm the array and it also doesn't create new variables. And as a consequence we can only use it in places where we would otherwise write multiple values separated by commas.
+
+* We can use the spread operator to copy an array and join two arrays
+
+* We can use spread operator only on iterables
+? Iterables: arrays, strings, maps, sets. NOT objects
+? But since ES 2018 we can use spread operator also with the objects
+
+* We can only use the spread operator when building an array, or when we pass values into a function
+*/
+
+/*
+! We use SPREAD on the right side of the assignment operator (=)
+? const arr = [1, 2, ...[3, 4]];   arr = [1, 2, 3, 4,]
+
+! We use REST on the left side of the assignment operator (=)
+? const [a, b, ...others] = [1, 2, 3, 4, 5];   others = [3, 4, 5]
+*/
+
+/*
+! Rest Pattern and Parameters
+* Rest pattern use exact same syntax as spread operator. However, to collect multiple elements and condense them into an array
+
+* Rest does not include any skipped elements in an array. For that reason the Rest pattern always must be the last in the destructuring assignment
+? const [a, b, ...others] = [1, 2, 3, 4, ...[5, 6, 7]];  others = [3, 4, 5, 6, 7]
+
+* There can only be one Rest in any destructuring assignment
+
+* This is same for the objects
+*/
+
+/*
+! Short Circuiting (&& and ||)
+* We can use && for short circuiting, means it returns the first falsy value, or the last value if all of them are truthy
+? console.log('' || 'Kosindu' );   ''
+? console.log(true || 0);   0
+? console.log(undefined || null);   undefined
+? console.log(undefined || 0 || '' || 'Hello' || 30 || null);   undefined
+
+* We can use || for short circuiting, means it returns the first truthy value, or the last value if all of them are falsy
+? console.log('' || 'Kosindu' );   'Kosindu'
+? console.log(true || 0);   true
+? console.log(undefined || null);   null   - Here both are falsy value, So it returns the last falsy value
+? console.log(undefined || 0 || '' || 'Hello' || 30 || null);   'Hello'
+
+TODO: As for practical applications, we can use the || operator to set default values
+TODO: As for practical applications, we can use the && operator to execute code in the second operand if the first one is true
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+/*
+
+
+*/
+
+console.log('' && 'Kosindu'); //'Kosindu'
+console.log(true && 0); //true
+console.log(undefined && null); //null   - Here both are falsy value, So it returns the last falsy value
+console.log(undefined && 0 && '' && 'Hello' && 30 && null); //'Hello'
