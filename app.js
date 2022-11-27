@@ -452,10 +452,10 @@ printForecast([12, 5, -5, 0, 4]);
 /*
 ! Short Circuiting (&& and ||)
 * We can use && for short circuiting, means it returns the first falsy value, or the last value if all of them are truthy
-? console.log('' || 'Kosindu' );   ''
-? console.log(true || 0);   0
-? console.log(undefined || null);   undefined
-? console.log(undefined || 0 || '' || 'Hello' || 30 || null);   undefined
+? console.log('' && 'Kosindu' );   ''
+? console.log(true && 0);   0
+? console.log(undefined && null);   undefined
+? console.log(undefined && 0 && '' && 'Hello' && 30 || null);   undefined
 
 * We can use || for short circuiting, means it returns the first truthy value, or the last value if all of them are falsy
 ? console.log('' || 'Kosindu' );   'Kosindu'
@@ -468,8 +468,24 @@ TODO: As for practical applications, we can use the && operator to execute code 
 */
 
 /*
+! Nullish Coalescing Operator (??)
+TODO: There are some falsy values that are nullish values: null, undefined
+TODO: 0, '' are not nullish values, but they are falsy values
 
+* The Nullish Coalescing Operator work same as the || short circuiting, except it becomes truthy for 0 and ''
+? console.log(0 ?? 10);   0
 
+*/
+
+/*
+! Logical Assignment Operators
+* Basically we can use shorthands for Short Circuiting and for Nullish Coalescing Operator
+? man2.address = man2.address || 'Colombo';
+TODO: we can use following Logical Assignment Operators for the above example
+? man2.address ||= 'Colombo'
+
+* Here are the all Logical Assignment Operators
+? ||=, ??=, &&
 */
 
 /*
@@ -527,12 +543,4 @@ TODO: As for practical applications, we can use the && operator to execute code 
 
 */
 
-/*
-
-
-*/
-
-console.log('' && 'Kosindu'); //'Kosindu'
-console.log(true && 0); //true
-console.log(undefined && null); //null   - Here both are falsy value, So it returns the last falsy value
-console.log(undefined && 0 && '' && 'Hello' && 30 && null); //'Hello'
+console.log(0 ?? 'Kosindu'); //'Kosindu'
